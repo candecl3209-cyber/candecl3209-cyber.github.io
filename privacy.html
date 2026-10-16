@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="tiktok download 的 Google 数据访问、使用、存储、共享、撤销与删除说明。">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>隐私政策 · tiktok download</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="wrap masthead"><a class="brand" href="./">tiktok download<span>个人视频学习工具</span></a><nav aria-label="主导航"><a href="./">应用首页</a><a href="#contact">联系</a></nav></header>
+  <main id="main" class="wrap policy">
+    <p class="eyebrow">数据使用说明 · 更新于 2026-10-16</p><h1>隐私政策</h1>
+    <p class="lead">tiktok download 是维护者本人使用的 Windows 本地视频学习程序。本政策说明桌面程序及本说明网站如何处理数据。</p>
+    <section><h2>1. Google 数据的访问范围和目的</h2><p>程序申请以下完整 OAuth Scope：</p><dl><dt><code>https://www.googleapis.com/auth/gmail.insert</code></dt><dd>用于向本人 Gmail 导入待处理文字邮件。这是添加邮件的写入权限，不是只读权限。</dd><dt><code>https://www.googleapis.com/auth/gmail.readonly</code></dt><dd>用于读取邮箱历史编号、历史变化、草稿列表、候选邮件的主题及标识，并读取匹配结果的完整邮件正文和邮件标签。其授权能力覆盖邮箱邮件和设置；程序按结果匹配逻辑筛选，Google 授权本身不保证只限本程序邮件。</dd></dl><p>两项 Scope 都属于 Google 的受限权限。当前申请范围不包含发送邮件、修改已有邮件或删除邮件的权限。</p></section>
+    <section><h2>2. 获取的数据如何使用</h2><p>Google 数据用于本人视频文字整理流程的输入投递、阶段结果关联、状态判断和结果回收。恢复或排查时，程序可能扫描草稿候选的元数据，以定位本程序的结果；不会把这些候选全部当作视频整理输入。</p><p>程序不是面向公众的邮箱服务，不出售 Google 用户数据，不将这些数据用于广告或信用评估，也没有训练通用模型的功能。本应用对从 Google API 收到的信息的使用及向其他应用的传输须遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 服务用户数据政策</a>，包括有限使用要求。</p></section>
+    <section><h2>3. 本机存储与 OAuth 凭据</h2><p>音频、字幕、文字稿、处理记录和取得的阶段结果保存在使用者电脑的项目目录。授权配置位于本机 <code>config/credentials.json</code>；访问令牌、刷新令牌及相关授权字段位于 <code>config/token.json</code>。</p><p>这些 JSON 文件没有由本程序额外加密。能够读取相应文件的本机账户、备份工具或恶意软件可能取得其中数据。使用者需要妥善管理电脑访问权限、磁盘保护及备份，不应把凭据或业务数据放入公开仓库。</p><p>授权和令牌刷新通过 Google 官方 HTTPS 端点完成；本机程序可能使用本人配置的网络代理。成功取得新授权或完成正常刷新时，程序以原子替换方式保存凭据；失败时的行为仍以程序实际校验结果为准。访问令牌到期可通过刷新令牌更新，但不保证授权永久有效。</p></section>
+    <section><h2>4. Google、ChatGPT 与其他服务</h2><p>待处理文字会被导入本人的 Google Gmail，邮件和结果草稿因此也保存在 Google 服务器，并受 Google 的服务政策约束。</p><p>在五阶段处理中，本程序会把经 Gmail 读取并保存的前序结果、必要标识与对应材料再次导入 Gmail，作为下一阶段的处理输入。因此，从 Google API 取得的结果也可能经本程序进入后续的第三方处理流程。</p><p>本人另行授权的 OpenAI / ChatGPT 应用在启用邮件任务后访问 Gmail，读取上述输入进行整理，再把结果写成 Gmail 草稿。该应用的账号连接、数据处理和保存由本人另外配置，并受相应服务条款约束。整个流程包含第三方处理；使用者应在启用前核对所用 ChatGPT 服务的数据控制和条款，本程序不替 OpenAI 承诺数据保存或训练设置。</p><p>本说明网站不接收 Gmail 数据、OAuth 凭据或视频文件，也没有登录表单、分析脚本、广告或自设 Cookie。采用 GitHub Pages 托管时，GitHub 会按其 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">隐私声明</a> 处理网站访问产生的信息（包括访问 IP 地址）。外部链接由对应服务处理。</p></section>
+    <section><h2>5. 保存期限和数据删除</h2><p>程序没有统一自动到期删除 Google 数据的承诺。文字稿、结果和记录可长期保留，直至本人清理。若要删除，应先停止程序与相关 ChatGPT 邮件任务，再由本人清理本机相关文件、数据库记录和备份，并在 Gmail 中删除对应邮件和草稿；删除本机文件不会自动删除云端副本。</p><p>若数据已进入 ChatGPT，应另外按该服务提供的设置管理对应会话与数据。删除和撤销不保证同时清除各服务依法或按其条款保留的全部数据。</p></section>
+    <section><h2>6. 撤销 Google 授权</h2><p>本人可打开 <a href="https://myaccount.google.com/connections">Google 账号的第三方连接页面</a>，找到本应用对应连接并移除访问权限。撤销后程序将无法继续访问 Gmail，直到本人再次同意授权。撤销不会自动删除已经保存的本机结果、Gmail 邮件或 ChatGPT 数据。</p><p>刷新令牌也可能因长期不用、密码变更、令牌数量限制、限时授权、账号或平台政策等原因失效。正式发布不等于永远无需再次授权。</p></section>
+    <section id="contact"><h2>7. 联系与更新</h2><p>维护者为 <a href="https://github.com/candecl3209-cyber">candecl3209-cyber</a>。可通过<a href="https://github.com/candecl3209-cyber/candecl3209-cyber.github.io/issues">站点仓库 Issues</a>联系维护者，请勿公开提交令牌、私人邮件或其他敏感资料。也可使用 Google 授权界面中配置的用户支持邮箱；本应用仅供维护者本人使用，数据操作由本人决定和执行。</p><p>数据用途或权限发生变化时，应先更新本政策并取得必要同意。本页是应用的数据处理说明，不表示 Google 已审核、验证或认可本应用。</p></section>
+  </main>
+  <footer class="wrap footer"><a href="./">返回应用首页</a><span>tiktok download</span></footer>
+</body>
+</html>
